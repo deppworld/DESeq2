@@ -1,4 +1,4 @@
-##https://cran.r-project.org/web/packages/pathfindR/vignettes/manual_execution.html
+
 library(pathfindR)
 RA_input <- GSE76275.top.table
 knitr::kable(head(RA_input))
@@ -7,7 +7,7 @@ RA_processed <- input_processing(input = RA_input, # the input: in this case, di
                                  p_val_threshold = 0.05, # p value threshold to filter significant genes
                                  pin_name_path  = "Biogrid", # the name of the PIN to use for active subnetwork search
                                  convert2alias = TRUE)
-#The available gene sets in pathfindR are “KEGG”, “Reactome”, “BioCarta”, “GO-All”, “GO-BP”, “GO-CC” and “GO-MF”. If the user prefers to use another gene set source, the gene_sets argument should be set to "Custom" and the custom gene sets (list) and the custom gene set descriptions (named vector) should be supplied via the arguments custom_genes and custom_descriptions, respectively. See ?fetch_gene_set for more details.
+#The available gene sets in pathfindR are â€œKEGGâ€, â€œReactomeâ€, â€œBioCartaâ€, â€œGO-Allâ€, â€œGO-BPâ€, â€œGO-CCâ€ and â€œGO-MFâ€. If the user prefers to use another gene set source, the gene_sets argument should be set to "Custom" and the custom gene sets (list) and the custom gene set descriptions (named vector) should be supplied via the arguments custom_genes and custom_descriptions, respectively. See ?fetch_gene_set for more details.
 
 biocarta_list <- fetch_gene_set(gene_sets = "GO-All",
                                 min_gset_size = 10,
